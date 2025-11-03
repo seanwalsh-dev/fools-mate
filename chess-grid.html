@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Fool's Mate</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="A tutorial on fool's mate in chess" />
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+  <link rel="icon" href="favicon.png">
+</head>
+<body>
+
+  <h1><span class="centered">Fool's</span> <span class="centered">Mate</span></h1>
+  <ol>
+    <li><div class="highlight" id="h1a">White pawn to b4</div><div class="highlight" id="h1b">Black pawn to d5</div></li>
+    <li><div class="highlight" id="h2a">White pawn to c4</div><div class="highlight" id="h2b">Black queen to a4</div><div class="highlight" id="h2c">Checkmate!</div></li>
+  </ol>
+
+  <div class="chess-board-container">
+    <p class="left-1">1</p>
+    <p class="left-2">2</p>
+    <p class="left-3">3</p>
+    <p class="left-4">4</p>
+    <p class="left-5">5</p>
+    <p class="left-6">6</p>
+    <p class="left-7">7</p>
+    <p class="left-8">8</p>
+    
+    <p class="right-1">1</p>
+    <p class="right-2">2</p>
+    <p class="right-3">3</p>
+    <p class="right-4">4</p>
+    <p class="right-5">5</p>
+    <p class="right-6">6</p>
+    <p class="right-7">7</p>
+    <p class="right-8">8</p>
+
+    <p class="top-a">a</p>
+    <p class="top-b">b</p>
+    <p class="top-c">c</p>
+    <p class="top-d">d</p>
+    <p class="top-e">e</p>
+    <p class="top-f">f</p>
+    <p class="top-g">g</p>
+    <p class="top-h">h</p>
+
+    <p class="bottom-a">a</p>
+    <p class="bottom-b">b</p>
+    <p class="bottom-c">c</p>
+    <p class="bottom-d">d</p>
+    <p class="bottom-e">e</p>
+    <p class="bottom-f">f</p>
+    <p class="bottom-g">g</p>
+    <p class="bottom-h">h</p>
+
+    <div class="white-1st-row" id="row-1"></div>
+    <div class="black-1st-row" id="row-2"></div>
+    <div class="white-1st-row" id="row-3"></div>
+    <div class="black-1st-row" id="row-4"></div>
+    <div class="white-1st-row" id="row-5"></div>
+    <div class="black-1st-row" id="row-6"></div>
+    <div class="white-1st-row" id="row-7"></div>
+    <div class="black-1st-row" id="row-8"></div>
+
+    <img class="pieces" id="a2" src="pieces/white-pawn.png" alt="white pawn">
+    <img class="pieces" id="b2" src="pieces/white-pawn.png" alt="white pawn"> 
+    <img class="pieces" id="c2" src="pieces/white-pawn.png" alt="white pawn"> 
+    <img class="pieces" id="d2" src="pieces/white-pawn.png" alt="white pawn"> 
+    <img class="pieces" id="e2" src="pieces/white-pawn.png" alt="white pawn"> 
+    <img class="pieces" id="f2" src="pieces/white-pawn.png" alt="white pawn"> 
+    <img class="pieces" id="g2" src="pieces/white-pawn.png" alt="white pawn"> 
+    <img class="pieces" id="h2" src="pieces/white-pawn.png" alt="white pawn"> 
+
+    <img class="pieces" id="ra1" src="pieces/white-rook.png" alt="white rook">
+    <img class="pieces" id="rh1" src="pieces/white-rook.png" alt="white rook">
+
+    <img class="pieces" id="nb1" src="pieces/white-knight.png" alt="white knight">
+    <img class="pieces" id="ng1" src="pieces/white-knight.png" alt="white knight">
+
+    <img class="pieces" id="bc1" src="pieces/white-bishop.png" alt="white bishop">
+    <img class="pieces" id="bf1" src="pieces/white-bishop.png" alt="white bishop">
+
+    <img class="pieces" id="kd1" src="pieces/white-king.png" alt="white king">
+    <img class="pieces" id="qe1" src="pieces/white-queen.png" alt="white queen">
+
+    <img class="pieces" id="a7" src="pieces/black-pawn.png" alt="black pawn">
+    <img class="pieces" id="b7" src="pieces/black-pawn.png" alt="black pawn"> 
+    <img class="pieces" id="c7" src="pieces/black-pawn.png" alt="black pawn"> 
+    <img class="pieces" id="d7" src="pieces/black-pawn.png" alt="black pawn"> 
+    <img class="pieces" id="e7" src="pieces/black-pawn.png" alt="black pawn"> 
+    <img class="pieces" id="f7" src="pieces/black-pawn.png" alt="black pawn"> 
+    <img class="pieces" id="g7" src="pieces/black-pawn.png" alt="black pawn"> 
+    <img class="pieces" id="h7" src="pieces/black-pawn.png" alt="black pawn"> 
+
+    <img class="pieces" id="ra8" src="pieces/black-rook.png" alt="black rook">
+    <img class="pieces" id="rh8" src="pieces/black-rook.png" alt="black rook">
+
+    <img class="pieces" id="nb8" src="pieces/black-knight.png" alt="black knight">
+    <img class="pieces" id="ng8" src="pieces/black-knight.png" alt="black knight">
+
+    <img class="pieces" id="bc8" src="pieces/black-bishop.png" alt="black bishop">
+    <img class="pieces" id="bf8" src="pieces/black-bishop.png" alt="black bishop">
+
+    <img class="pieces" id="kd8" src="pieces/black-king.png" alt="black king">
+    <img class="pieces" id="qe8" src="pieces/black-queen.png" alt="black queen">
+
+    <div class="yellow-square" id="ys-b2"></div>
+    <div class="yellow-square" id="ys-b4"></div>
+    <div class="yellow-square" id="ys-d7"></div>
+    <div class="yellow-square" id="ys-d5"></div>
+    <div class="yellow-square" id="ys-c2"></div>
+    <div class="yellow-square" id="ys-c4"></div>
+    <div class="yellow-square" id="ys-e8"></div>
+    <div class="yellow-square" id="ys-e4"></div>
+  </div>
+</body>
+</html>

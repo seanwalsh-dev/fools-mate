@@ -1,0 +1,578 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: radial-gradient(#b2e068,#81b64c 40%,#5d9948 75%);
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 25%; 75%;
+}
+
+h1 {
+  grid-area: 1 / 1 / 2 / 2;
+  text-align: center;
+  margin:auto;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+  font-size: 5rem;
+  color: white;
+  text-shadow: 4px 4px black;
+}
+
+ol {
+  grid-area: 2 / 1 / -1 / 2;
+  margin: 0 auto;
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 600;
+  font-size: 2rem;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+
+.chess-board-container {
+  width: 45vw;
+  height: 45vw;
+  margin: 2.5vw;
+  background-color: black;
+  display: grid;
+  grid-template-columns: 3% 11.75% 11.75% 11.75% 11.75% 11.75% 11.75% 11.75% 11.75% 3%;
+  grid-template-rows: 3% 11.75% 11.75% 11.75% 11.75% 11.75% 11.75% 11.75% 11.75% 3%;
+  grid-area: 1 / 2 / -1 / -1;
+  flex: display;
+  justify-content: center;
+  align-content: center;
+}
+p {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1vw;
+  font-family: "Titillium Web", sans-serif;
+}
+
+.left-1 {
+  grid-area: 2 / 1 / 3 / 2;
+}
+.left-2 {
+  grid-area: 3 / 1 / 4 / 2;
+}
+.left-3 {
+  grid-area: 4 / 1 / 5 / 2;
+}
+.left-4 {
+  grid-area: 5 / 1 / 6 / 2;
+}
+.left-5 {
+  grid-area: 6 / 1 / 7 / 2;
+}
+.left-6 {
+  grid-area: 7 / 1 / 8 / 2;
+}
+.left-7 {
+  grid-area: 8 / 1 / 9 / 2;
+}
+.left-8 {
+  grid-area: 9 / 1 / 10 / 2;
+}
+
+.right-1 {
+  grid-area: 2 / -2 / 3 / -1;
+}
+.right-2 {
+  grid-area: 3 / -2 / 4 / -1;
+}
+.right-3 {
+  grid-area: 4 / -2 / 5 / -1;
+}
+.right-4 {
+  grid-area: 5 / -2 / 6 / -1;
+}
+.right-5 {
+  grid-area: 6 / -2 / 7 / -1;
+}
+.right-6 {
+  grid-area: 7 / -2 / 8 / -1;
+}
+.right-7 {
+  grid-area: 8 / -2 / 9 / -1;
+}
+.right-8 {
+  grid-area: 9 / -2 / 10 / -1;
+}
+
+.top-a {
+  grid-area: 1 / 2 / 2 / 3;
+}
+.top-b {
+  grid-area: 1 / 3 / 2 / 4;
+}
+.top-c {
+  grid-area: 1 / 4 / 2 / 5;
+}
+.top-d {
+  grid-area: 1 / 5 / 2 / 6;
+}
+.top-e {
+  grid-area: 1 / 6 / 2 / 7;
+}
+.top-f {
+  grid-area: 1 / 7 / 2 / 8;
+}
+.top-g {
+  grid-area: 1 / 8 / 2 / 9;
+}
+.top-h {
+  grid-area: 1 / 9 / 2 / 10;
+}
+
+.bottom-a {
+  grid-area: -2 / 2 / -1 / 3;
+}
+.bottom-b {
+  grid-area: -2 / 3 / -1 / 4;
+}
+.bottom-c {
+  grid-area: -2 / 4 / -1 / 5;
+}
+.bottom-d {
+  grid-area: -2 / 5 / -1 / 6;
+}
+.bottom-e {
+  grid-area: -2 / 6 / -1 / 7;
+}
+.bottom-f {
+  grid-area: -2 / 7 / -1 / 8;
+}
+.bottom-g {
+  grid-area: -2 / 8 / -1 / 9;
+}
+.bottom-h {
+  grid-area: -2 / 9 / -1 / 10;
+}
+
+.white-1st-row {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(240, 217, 181),
+    rgb(240, 217, 181) 12.5%,
+    rgb(181, 136, 99) 12.5%,
+    rgb(181, 136, 99) 25%    
+  );
+}
+.black-1st-row {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgb(181, 136, 99),
+    rgb(181, 136, 99) 12.5%,
+    rgb(240, 217, 181) 12.5%,
+    rgb(240, 217, 181) 25%
+  );
+}
+
+#row-1 {
+  grid-area: 2 / 2 / 3 / -2;
+}
+#row-2 {
+  grid-area: 3 / 2 / 4 / -2;
+}
+#row-3 {
+  grid-area: 4 / 2 / 5 / -2;
+}
+#row-4 {
+  grid-area: 5 / 2 / 6 / -2;
+}
+#row-5 {
+  grid-area: 6 / 2 / 7 / -2;
+}
+#row-6 {
+  grid-area: 7 / 2 / 8 / -2;
+}
+#row-7 {
+  grid-area: 8 / 2 / 9 / -2;
+}
+#row-8 {
+  grid-area: 9 / 2 / 10 / -2;
+}
+
+.pieces {
+  height: 90%;
+  width: auto;
+  margin: auto;
+  z-index: 10;
+}
+
+@keyframes b2-b4 {
+  0% {grid-area: 3 / 3 / 4 / 4;}
+  20% {grid-area: 5 / 3 / 6 / 4;}
+  99% {grid-area: 5 / 3 / 6 / 4;}
+  100% {grid-area: 3 / 3 / 4 / 4;}
+}
+@keyframes ys-b2-b4 {
+  0% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  9% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  10%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+  19% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+  20% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  100% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+}
+
+@keyframes d7-d5 {
+  0% {grid-area: -3 / 5 / -4 / 6;}
+  40% {grid-area: -5 / 5 / -6 / 6;}
+  99% {grid-area: -5 / 5 / -6 / 6;}
+  100% {grid-area: -3 / 5 / -4 / 6;}
+}
+@keyframes ys-d7-d5 {
+  0% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  20% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  21%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+  29% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+  30% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  100% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+}
+
+@keyframes c2-c4 {
+  0% {grid-area: 3 / 4 / 4 / 5;}
+  60% {grid-area: 5 / 4 / 6 / 5;}
+  99% {grid-area: 5 / 4 / 6 / 5;}
+  100% {grid-area: 3 / 4 / 4 / 5;}
+}
+@keyframes ys-c2-c4 {
+  0% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  30% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  31%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+  40% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+  41% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  100% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+}
+
+@keyframes qa4 {
+  0% {grid-area: -2 / 6 / -3 / 7;}
+  80% {grid-area: 5 / 2 / 6 / 3;}
+  99% {grid-area: 5 / 2 / 6 / 3;}
+  100% {grid-area: -2 / 6 / -3 / 7;}
+}
+@keyframes ys-qa4 {
+  0% {background-color: transparent;}
+  40% {background-color: transparent;}
+  41%{background-color: yellow;}
+  99% {background-color: yellow;}
+  100% {background-color: transparent;}
+}
+@keyframes h2b {
+  0% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  40% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  41%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+  50% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+  51% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  100% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+}
+
+@keyframes checkmate {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(0deg);}
+  60% {transform: rotate(90deg);}
+  99% {transform: rotate(90deg);}
+  100% {transform: rotate(0deg);}
+}
+@keyframes h2c {
+  0% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  50% {background-color: transparent; color: white; text-shadow: 2px 2px black;}
+  51%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+  100% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+}
+
+#a2 {
+  grid-area: 3 / 2 / 4 / 3;
+}
+#b2 {
+  grid-area: 3 / 3 / 4 / 4;
+  animation: b2-b4 10s linear infinite;
+}
+#c2 {
+  grid-area: 3 / 4 / 4 / 5;
+  animation: c2-c4 10s linear infinite;
+}
+#d2 {
+  grid-area: 3 / 5 / 4 / 6;
+}
+#e2 {
+  grid-area: 3 / 6 / 4 / 7;
+}
+#f2 {
+  grid-area: 3 / 7 / 4 / 8;
+}
+#g2 {
+  grid-area: 3 / 8 / 4 / 9;
+}
+#h2 {
+  grid-area: 3 / 9 / 4 / 10;
+}
+
+#ra1 {
+  grid-area: 2 / 2 / 3 / 3;
+}
+#rh1 {
+  grid-area: 2 / 9 / 3 / 10;
+}
+#nb1 {
+  grid-area: 2 / 3 / 3 / 4;
+}
+#ng1 {
+  grid-area: 2 / 8 / 3 / 9;
+}
+#bc1 {
+  grid-area: 2 / 4 / 3 / 5;
+}
+#bf1 {
+  grid-area: 2 / 7 / 3 / 8;
+}
+#kd1 {
+  grid-area: 2 / 5 / 3 / 6;
+  animation: checkmate 10s linear infinite;
+}
+#qe1 {
+  grid-area: 2 / 6 / 3 / 7;
+}
+
+#a7 {
+  grid-area: -3 / 2 / -4 / 3;
+}
+#b7 {
+  grid-area: -3 / 3 / -4 / 4;
+}
+#c7 {
+  grid-area: -3 / 4 / -4 / 5;
+}
+#d7 {
+  grid-area: -3 / 5 / -4 / 6;
+  animation: d7-d5 10s linear infinite;
+}
+#e7 {
+  grid-area: -3 / 6 / -4 / 7;
+}
+#f7 {
+  grid-area: -3 / 7 / -4 / 8;
+}
+#g7 {
+  grid-area: -3 / 8 / -4 / 9;
+}
+#h7 {
+  grid-area: -3 / 9 / -4 / 10;
+}
+
+#ra8 {
+  grid-area: -2 / 2 / -3 / 3;
+}
+#rh8 {
+  grid-area: -2 / 9 / -3 / 10;
+}
+#nb8 {
+  grid-area: -2 / 3 / -3 / 4;
+}
+#ng8 {
+  grid-area: -2 / 8 / -3 / 9;
+}
+#bc8 {
+  grid-area: -2 / 4 / -3 / 5;
+}
+#bf8 {
+  grid-area: -2 / 7 / -3 / 8;
+}
+#kd8 {
+  grid-area: -2 / 5 / -3 / 6;
+}
+#qe8 {
+  grid-area: -2 / 6 / -3 / 7;
+  animation: qa4 10s linear infinite;
+}
+
+.yellow-square {
+  width: 100%;
+  height: 100%;
+}
+#ys-b2 {
+  grid-area: 3 / 3 / 4 / 4;
+  animation: ys-b2-b4 10s linear infinite;
+}
+#ys-b4{
+  grid-area: 5 / 3 / 6 / 4;
+  animation: ys-b2-b4 10s linear infinite;
+}
+#ys-d7{
+  grid-area: -3 / 5 / -4 / 6;
+  animation: ys-d7-d5 10s linear infinite;
+}
+#ys-d5{
+  grid-area: -5 / 5 / -6 / 6;
+  animation: ys-d7-d5 10s linear infinite;
+}
+#ys-c2{
+  grid-area: 3 / 4 / 4 / 5;
+  animation: ys-c2-c4 10s linear infinite;
+}
+#ys-c4{
+  grid-area: 5 / 4 / 6 / 5;
+  animation: ys-c2-c4 10s linear infinite;
+}
+#ys-e8{
+  grid-area: -2 / 6 / -3 / 7;
+  animation: ys-qa4 10s linear infinite;
+}
+#ys-e4{
+  grid-area: 5 / 2 / 6 / 3;
+  animation: ys-qa4 10s linear infinite;
+}
+
+.highlight {
+  padding: 1vw;
+}
+#h1a{
+  animation: ys-b2-b4 10s linear infinite;
+}
+#h1b{
+  animation: ys-d7-d5 10s linear infinite;
+}
+#h2a{
+  animation: ys-c2-c4 10s linear infinite;
+}
+#h2b{
+  animation: h2b 10s linear infinite;
+}
+#h2c{
+  animation: h2c 10s linear infinite;
+}
+
+@media (max-width: 650px) {
+  body {
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 35% 50%;
+  }
+  .chess-board-container {
+    grid-area: 3 / 1 / -1 / -1;
+    margin: auto;
+    margin-top: 0;
+    width: 60vw;
+    height: 60vw;
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  ol {
+    font-size: 1.5em;
+    text-shadow: 1px 1px black;
+  }
+
+  @keyframes ys-b2-b4 {
+    0% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    9% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    10%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    19% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    20% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    100% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+  }
+  
+  @keyframes ys-d7-d5 {
+    0% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    20% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    21%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    29% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    30% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    100% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+  }
+  
+  @keyframes ys-c2-c4 {
+    0% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    30% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    31%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    40% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    41% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    100% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+  }
+
+  @keyframes h2b {
+    0% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    40% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    41%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    50% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    51% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    100% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+  }
+
+  @keyframes h2c {
+    0% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    50% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    51%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    100% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+  }
+}
+
+@media (max-width: 400px) {
+  body {
+    grid-template-columns: 100%;
+    grid-template-rows: 15% 25% 50%;
+  }
+  .chess-board-container {
+    grid-area: 3 / 1 / -1 / -1;
+    margin: auto;
+    margin-top: 0;
+    width: 90vw;
+    height: 90vw;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  ol {
+    font-size: 1.25em;
+  }
+
+  @keyframes ys-b2-b4 {
+    0% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    9% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    10%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    19% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    20% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    100% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+  }
+  
+  @keyframes ys-d7-d5 {
+    0% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    20% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    21%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    29% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    30% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    100% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+  }
+  
+  @keyframes ys-c2-c4 {
+    0% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    30% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    31%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    40% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    41% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    100% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+  }
+
+  @keyframes h2b {
+    0% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    40% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    41%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    50% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    51% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    100% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+  }
+
+  @keyframes h2c {
+    0% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    50% {background-color: transparent; color: white; text-shadow: 1px 1px black;}
+    51%{background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+    100% {background-color: yellow; color: black; text-shadow: 0 0 transparent;}
+  }
+}
+
